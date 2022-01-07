@@ -8,9 +8,11 @@ const rootElement = document.getElementById("root");
 render(
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<App/>}/>
-            <Route path="/expenses" element={<Expenses/>}/>
-            <Route path="/invoices" element={<Invoices/>}/>
+            <Route path="/" element={<App/>}>
+                <Route path="expenses" element={<Expenses/>}/>
+                <Route path="invoices" element={<Invoices/>}/>
+            </Route>
+            {/* Route를 중첩하면 URL도 중첩되지만 UI 컴포넌트들도 중첩된다 */}
         </Routes>
     </BrowserRouter>,
     rootElement

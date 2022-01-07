@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 export default function App() {
   return (
@@ -10,6 +10,7 @@ export default function App() {
         <Link to="/invoices">Invoices</Link> |{" "}
         <Link to="/expenses">Expenses</Link>
       </nav>
+      <Outlet/>
     </div>
   );
 }
@@ -18,4 +19,7 @@ export default function App() {
  * Link = a / to = href
  * to에 들어가는 경로는 해당 컴포넌트의 parentURL + 경로로 적용됨
  * ".." 사용가능!
+ * 
+ * Nested Route 🔽
+ * route도 중첩하고 <Outlet/>을 사용하면 Outlet에 중첩한 경로의 요청 내용을 가져옴
  */
